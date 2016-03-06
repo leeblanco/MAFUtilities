@@ -18,7 +18,7 @@ public class CRMDB {
 	private static Connection con;
 	private static String username="";
 	private static String password="";
-	private static String url="";
+	private static String url=" ";
 	private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	
 	static {
