@@ -10,6 +10,92 @@
 	    <artifactId>log4j</artifactId>
 	    <version>1.2.17</version>
 	</dependency>
+
+	<dependency>
+		<groupId>com.jcraft</groupId>
+		<artifactId>jsch</artifactId>
+		<version>0.1.53</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-api</artifactId>
+		<version>7.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4.7</version>
+	</dependency>
+
+	<!-- Hibernate Persistence JARs -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>4.2.2.Final</version>
+	</dependency>
+	
+	<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.2.Final</version>
+    </dependency>
+	
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.6</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>1.4</version>
+    </dependency>
+	
+	<!-- SPRING -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>4.2.2.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>4.2.2.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>4.2.2.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>4.2.2.RELEASE</version>
+    </dependency>
+ 
+    <!-- Spring ORM support -->
+     <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+     	<version>4.2.2.RELEASE</version>
+     </dependency>
+	
+	<!-- CSV parsing --> 
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-csv</artifactId>
+		<version>1.2</version>
+	</dependency>
+
+
 </dependencies>
+
+
   
 </project>

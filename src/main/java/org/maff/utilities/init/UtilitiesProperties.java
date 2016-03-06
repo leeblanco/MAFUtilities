@@ -11,7 +11,7 @@ public class UtilitiesProperties {
 
 	static final Logger logger = Logger.getLogger(UtilitiesProperties.class);
 	private HashMap<String, String> mapProperties = new HashMap<String, String>();
-	
+	private Properties prop = new Properties();
 	
 	public void initProperties(){
 		
@@ -20,7 +20,6 @@ public class UtilitiesProperties {
 		//Initialize all properties by reading properties file on resources folder 
 		try(InputStream in = (getClass().getClassLoader().getResourceAsStream("utilities.properties"))){
 			
-			Properties prop = new Properties();
 			prop.load(in);
 			
 			logger.info("Load all configured properties ");
@@ -50,5 +49,8 @@ public class UtilitiesProperties {
 		this.mapProperties = mapProperties;
 	}
 	
+	public Properties getProperties(){
+		return prop;
+	}
 	
 }
