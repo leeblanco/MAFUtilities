@@ -32,4 +32,29 @@ public class HashErrorTxParser {
 		
 		return hashNumList;
 	}
+	
+	/**
+	 * Retrieves the Reference Number of Beam transactions that encountered
+	 * error and this will be returned to the caller of the method.
+	 * 
+	 * @author Lee
+	 * Created Date 2016-03-12
+	 * 
+	 * */
+	public List<String> retrieveRefNo(List<ErrorTransaction> listErrTx){
+		
+		logger.info("Retrieve Reference Numbers ");
+		
+		List<String> refNumList = new ArrayList<String>();
+		
+		for (ErrorTransaction tx: listErrTx){
+			
+			if ("Credit Card hash not found".equals(tx.getErrorCategory())){
+				logger.info("Hashed Card No :: " +tx.getHash()+ " Error Category::: "+ tx.getErrorCategory());
+				refNumList.add(tx.getReferenceNumber());
+			}
+		}
+		
+		return refNumList;
+	}
 }

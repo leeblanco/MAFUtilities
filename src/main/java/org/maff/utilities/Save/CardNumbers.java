@@ -26,7 +26,7 @@ public class CardNumbers {
 			buf.write("New Card");
 			for (String cardNo : listOfCardNo){
 				
-				buf.write(cardNo+"\n");
+				buf.write(cardNo+"\n");	
 			}
 			
 		}catch(IOException ioE){

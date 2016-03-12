@@ -12,5 +12,6 @@ public interface DailyTxDAO {
 	public DailyTransaction find(int key);
 	public void batchInsert(List<DailyTransaction> tx );
 	public void deleteAllDailyTxRecord();
+	public List<DailyTransaction> retrieveRefNum(List<String> listOfRefNum);
 	
 }

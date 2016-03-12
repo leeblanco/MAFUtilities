@@ -12,6 +12,7 @@ import org.maff.utilities.Reader.ReadDailyTxFiles;
 import org.maff.utilities.Reader.ReadEhdfLogs;
 import org.maff.utilities.Reader.ReadErrorTxFiles;
 import org.maff.utilities.Reader.ReaderUtility;
+import org.maff.utilities.controller.ErrorTxController;
 import org.maff.utilities.dao.DailyTxDAO;
 import org.maff.utilities.init.UtilitiesProperties;
 import org.maff.utilities.model.DailyTransaction;
@@ -30,8 +31,9 @@ public class UtilitiesMain {
 		
 //		testRetrievalFileName();
 //		testRetrievalFileReader();
+		generateDailyTxFile();
 		
-		ErrorRetrievalTesting();
+//		ErrorRetrievalTesting();
 //		deleteAllDlyTx();
 	}
 
@@ -52,6 +54,14 @@ public class UtilitiesMain {
 		List<ErrorTransaction> listOfErrorTx = new ArrayList<ErrorTransaction>();
 		List<ErrorTransaction> tempErrorTx = new ArrayList<ErrorTransaction>();
 		
+		retrieveErrTxFileNames(read, util, listOfErrorTx);
+	}
+
+
+	public static void retrieveErrTxFileNames(ReadErrorTxFiles read,
+			ReaderUtility util, List<ErrorTransaction> listOfErrorTx) {
+		List<String> listOfFileNames;
+		List<ErrorTransaction> tempErrorTx;
 		Pattern fileNameRegex = Pattern.compile("[^*]+|(\\*)");
 		
 //		String path = "C:\\Users\\Lee\\Documents\\O\\Work\\MAF\\Beam\\DailyTx\\Test\\";
@@ -275,6 +285,21 @@ public class UtilitiesMain {
 		dlyDAO.add(dlyTx);
 		
 		context.close();
+	}
+	
+	/**
+	 * Generates Daily Transaction file which haave encountered credit card hash not found
+	 * 
+	 * @author Lee
+	 * Created Date 2016-03-12
+	 * */
+	public static void generateDailyTxFile(){
+		
+		ErrorTxController process = new ErrorTxController();
+		String errorLogPath = "C:\\Users\\Lee\\Documents\\O\\Work\\MAF\\Beam\\ErrorFiles\\";
+		String savePath = "C:\\Users\\Lee\\Documents\\O\\Work\\MAF\\Beam\\ErrorFiles\\Processed\\DailyTransaction_2016-03-12.txt"; 	
+		
+		process.createDailyTransaction(errorLogPath, savePath);
 	}
 	
 	public static void DailyTxTestFileReader(){

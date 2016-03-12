@@ -177,6 +177,8 @@ public class CRMDB {
 			}
 		}
 		
+		logger.info("IN PARAMETER ::: " +concat.toString());
+		
 		return concat.toString();
 	}
 	
